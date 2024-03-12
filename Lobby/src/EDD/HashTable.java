@@ -95,7 +95,7 @@ public class HashTable {
         
         return -1;
     }
-    public void Avaiables(List hab_disp){
+    public void Availables(List hab_disp){
         for (int i = 1; i < this.getState().length; i++) {
             if (getState()[i] == null){
                 hab_disp.addEnd(i);
