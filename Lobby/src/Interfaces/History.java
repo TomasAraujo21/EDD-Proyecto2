@@ -6,16 +6,23 @@ package Interfaces;
 
 /**
  *
- * @author tomasaraujo
+ * @author Christian
  */
 public class History extends javax.swing.JFrame {
 
     /**
      * Creates new form History
      */
-    public History() {
-        initComponents();
-    }
+    
+        public static Menu v1;
+        
+        public History(Menu v1) {
+            initComponents();
+            this.v1 = v1;
+            v1.setVisible(false);
+            this.setLocationRelativeTo(null);
+            this.setResizable(false); 
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,11 +33,45 @@ public class History extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        back = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        back.setBackground(new java.awt.Color(0, 0, 0));
+        back.setForeground(new java.awt.Color(255, 255, 255));
+        back.setText("Volver");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 314, 100, 40));
+
+        jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Historial");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 120, 30));
+
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 380));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        this.setVisible(false);
+        Welcome b = new Welcome();
+        Menu window1 = new Menu(b);
+        window1.setVisible(true);
+    }//GEN-LAST:event_backActionPerformed
 
     /**
      * @param args the command line arguments
@@ -62,11 +103,15 @@ public class History extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new History().setVisible(true);
+                new History(v1).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton back;
+    private javax.swing.JLabel background;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

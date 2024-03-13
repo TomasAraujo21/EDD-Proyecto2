@@ -6,15 +6,21 @@ package Interfaces;
 
 /**
  *
- * @author tomasaraujo
+ * @author Christian
  */
 public class Menu extends javax.swing.JFrame {
 
     /**
      * Creates new form Menu
      */
-    public Menu() {
+    public static Welcome v1;
+    
+    public Menu(Welcome v1) {
         initComponents();
+        this.v1 = v1;
+        v1.setVisible(false);
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
@@ -29,91 +35,151 @@ public class Menu extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        checkIn_buttom = new javax.swing.JButton();
-        checkOut_buttom = new javax.swing.JButton();
-        searchRes_buttom = new javax.swing.JButton();
-        historial_buttom = new javax.swing.JButton();
-        searchLod_buttom = new javax.swing.JButton();
-        Save = new javax.swing.JButton();
+        checkIn = new javax.swing.JButton();
+        checkOut = new javax.swing.JButton();
+        searchRes = new javax.swing.JButton();
+        history = new javax.swing.JButton();
+        searchLod = new javax.swing.JButton();
+        save = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("DIN Alternate", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Buscar Reservación:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, 20));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, 20));
 
-        jLabel2.setFont(new java.awt.Font("DIN Alternate", 0, 24)); // NOI18N
-        jLabel2.setText("Selecciona una opción:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Escoge una opción:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        checkIn_buttom.setText("Check In");
-        checkIn_buttom.addActionListener(new java.awt.event.ActionListener() {
+        checkIn.setBackground(new java.awt.Color(0, 0, 0));
+        checkIn.setForeground(new java.awt.Color(255, 255, 255));
+        checkIn.setText("Check In");
+        checkIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                checkIn_buttomActionPerformed(evt);
+                checkInActionPerformed(evt);
             }
         });
-        jPanel1.add(checkIn_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 90, 40));
+        jPanel1.add(checkIn, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 90, 40));
 
-        checkOut_buttom.setText("Check Out");
-        jPanel1.add(checkOut_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, -1, 40));
-
-        searchRes_buttom.setText("Buscar");
-        jPanel1.add(searchRes_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 80, 40));
-
-        historial_buttom.setText("Historial");
-        historial_buttom.addActionListener(new java.awt.event.ActionListener() {
+        checkOut.setBackground(new java.awt.Color(0, 0, 0));
+        checkOut.setForeground(new java.awt.Color(255, 255, 255));
+        checkOut.setText("Check Out");
+        checkOut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                historial_buttomActionPerformed(evt);
+                checkOutActionPerformed(evt);
             }
         });
-        jPanel1.add(historial_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 90, 40));
+        jPanel1.add(checkOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 90, 40));
 
-        searchLod_buttom.setText("Buscar");
-        jPanel1.add(searchLod_buttom, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 80, 40));
+        searchRes.setBackground(new java.awt.Color(0, 0, 0));
+        searchRes.setForeground(new java.awt.Color(255, 255, 255));
+        searchRes.setText("Buscar");
+        searchRes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchResActionPerformed(evt);
+            }
+        });
+        jPanel1.add(searchRes, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 90, 40));
 
-        Save.setText("Guardar");
-        jPanel1.add(Save, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 240, 90, 40));
+        history.setBackground(new java.awt.Color(0, 0, 0));
+        history.setForeground(new java.awt.Color(255, 255, 255));
+        history.setText("Historial");
+        history.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                historyActionPerformed(evt);
+            }
+        });
+        jPanel1.add(history, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, 90, 40));
 
-        jLabel3.setFont(new java.awt.Font("DIN Alternate", 0, 14)); // NOI18N
+        searchLod.setBackground(new java.awt.Color(0, 0, 0));
+        searchLod.setForeground(new java.awt.Color(255, 255, 255));
+        searchLod.setText("Buscar");
+        searchLod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchLodActionPerformed(evt);
+            }
+        });
+        jPanel1.add(searchLod, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 90, 40));
+
+        save.setBackground(new java.awt.Color(0, 0, 0));
+        save.setForeground(new java.awt.Color(255, 255, 255));
+        save.setText("Guardar");
+        jPanel1.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 90, 40));
+
+        jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Check In:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("DIN Alternate", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Guardar:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("DIN Alternate", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Check Out:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 60, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("DIN Alternate", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Historial de habitación:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("DIN Alternate", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Buscar hospedaje:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 370));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void checkIn_buttomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkIn_buttomActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_checkIn_buttomActionPerformed
+    private void checkInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkInActionPerformed
+        CheckIn checkin = new CheckIn(this);
+        this.setVisible(false);
+        checkin.setVisible(true);
+    }//GEN-LAST:event_checkInActionPerformed
 
-    private void historial_buttomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historial_buttomActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_historial_buttomActionPerformed
+    private void historyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_historyActionPerformed
+        History history = new History(this);
+        this.setVisible(false);
+        history.setVisible(true);
+    }//GEN-LAST:event_historyActionPerformed
+
+    private void searchResActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchResActionPerformed
+        SearchReservation searchRes = new SearchReservation(this);
+        this.setVisible(false);
+        searchRes.setVisible(true);
+    }//GEN-LAST:event_searchResActionPerformed
+
+    private void checkOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkOutActionPerformed
+        CheckOut checkout = new CheckOut(this);
+        this.setVisible(false);
+        checkout.setVisible(true);
+    }//GEN-LAST:event_checkOutActionPerformed
+
+    private void searchLodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchLodActionPerformed
+        SearchLodging searchLod = new SearchLodging(this);
+        this.setVisible(false);
+        searchLod.setVisible(true);
+    }//GEN-LAST:event_searchLodActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,20 +207,23 @@ public class Menu extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                new Menu(v1).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Save;
-    private javax.swing.JButton checkIn_buttom;
-    private javax.swing.JButton checkOut_buttom;
-    private javax.swing.JButton historial_buttom;
+    private javax.swing.JLabel background;
+    private javax.swing.JButton checkIn;
+    private javax.swing.JButton checkOut;
+    private javax.swing.JButton history;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -163,7 +232,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton searchLod_buttom;
-    private javax.swing.JButton searchRes_buttom;
+    private javax.swing.JButton save;
+    private javax.swing.JButton searchLod;
+    private javax.swing.JButton searchRes;
     // End of variables declaration//GEN-END:variables
 }
