@@ -70,7 +70,7 @@ public class SearchReservation extends javax.swing.JFrame {
                 searchActionPerformed(evt);
             }
         });
-        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 70, 30));
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 90, 30));
 
         jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

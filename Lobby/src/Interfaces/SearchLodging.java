@@ -67,7 +67,7 @@ public class SearchLodging extends javax.swing.JFrame {
                 searchTextActionPerformed(evt);
             }
         });
-        jPanel1.add(searchText, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 290, 30));
+        jPanel1.add(searchText, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 290, 30));
 
         search.setBackground(new java.awt.Color(0, 0, 0));
         search.setForeground(new java.awt.Color(255, 255, 255));
@@ -77,17 +77,17 @@ public class SearchLodging extends javax.swing.JFrame {
                 searchActionPerformed(evt);
             }
         });
-        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 70, 30));
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 110, 30));
 
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Buscar hospedaje");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 250, 30));
 
-        jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Britannic Bold", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Introduce los datos del hospedaje:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
+        jLabel1.setText("Indique la cédula del huésped del cual desea encontrar su reservacion: ");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 480, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
         jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 370));
