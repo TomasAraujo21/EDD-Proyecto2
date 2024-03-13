@@ -36,7 +36,19 @@ public class CheckIn extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         back = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        number = new javax.swing.JTextField();
         background = new javax.swing.JLabel();
+        name = new javax.swing.JTextField();
+        id = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lastName = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        email = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        comboSex = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -51,15 +63,87 @@ public class CheckIn extends javax.swing.JFrame {
                 backActionPerformed(evt);
             }
         });
-        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 90, 40));
+        jPanel1.add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 90, 40));
 
         jLabel3.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Check In");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 30));
 
+        number.setBackground(new java.awt.Color(255, 255, 255));
+        number.setForeground(new java.awt.Color(255, 255, 255));
+        number.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                numberActionPerformed(evt);
+            }
+        });
+        jPanel1.add(number, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 230, -1));
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
-        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 470, 370));
+
+        name.setBackground(new java.awt.Color(255, 255, 255));
+        name.setForeground(new java.awt.Color(255, 255, 255));
+        name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 230, -1));
+
+        id.setBackground(new java.awt.Color(255, 255, 255));
+        id.setForeground(new java.awt.Color(255, 255, 255));
+        id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idActionPerformed(evt);
+            }
+        });
+        jPanel1.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 230, -1));
+
+        jLabel1.setText("Introduzca el número de teléfono del huésped:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 300, -1));
+
+        jLabel2.setText("Introduzca el nombre del huésped:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 300, -1));
+
+        jLabel4.setText("Introduzca el apellido del huésped:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 300, -1));
+
+        jLabel5.setText("Introduzca la cédula del huésped:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 300, -1));
+
+        lastName.setBackground(new java.awt.Color(255, 255, 255));
+        lastName.setForeground(new java.awt.Color(255, 255, 255));
+        lastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lastNameActionPerformed(evt);
+            }
+        });
+        jPanel1.add(lastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 230, -1));
+
+        jLabel6.setText("Indique el sexo del huésped:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 230, -1));
+
+        email.setBackground(new java.awt.Color(255, 255, 255));
+        email.setForeground(new java.awt.Color(255, 255, 255));
+        email.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                emailActionPerformed(evt);
+            }
+        });
+        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 230, -1));
+
+        jLabel7.setText("Introduzca el correo electrónico  del huésped:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 300, -1));
+
+        comboSex.setBackground(new java.awt.Color(255, 255, 255));
+        comboSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
+        comboSex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboSexActionPerformed(evt);
+            }
+        });
+        jPanel1.add(comboSex, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 360));
 
@@ -72,6 +156,30 @@ public class CheckIn extends javax.swing.JFrame {
         Menu window1 = new Menu(b);
         window1.setVisible(true);  
     }//GEN-LAST:event_backActionPerformed
+
+    private void numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_numberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_numberActionPerformed
+
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameActionPerformed
+
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idActionPerformed
+
+    private void lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lastNameActionPerformed
+
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_emailActionPerformed
+
+    private void comboSexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboSexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboSexActionPerformed
 
     /**
      * @param args the command line arguments
@@ -111,7 +219,19 @@ public class CheckIn extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
+    private javax.swing.JComboBox<String> comboSex;
+    private javax.swing.JTextField email;
+    private javax.swing.JTextField id;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField lastName;
+    private javax.swing.JTextField name;
+    private javax.swing.JTextField number;
     // End of variables declaration//GEN-END:variables
 }
