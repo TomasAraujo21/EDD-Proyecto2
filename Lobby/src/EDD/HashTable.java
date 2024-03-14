@@ -45,14 +45,14 @@ public class HashTable {
         }
     }
     
-    public void insertState(Status estado){
-        if (!isInHash(estado)) {
-            int index = estado.getNum_hab();
+    public void insertState(Status state){
+        if (!isInHash(state)) {
+            int index = state.getNum_hab();
             while (getState()[index] != null) {
                 index++;
             }
 //            JOptionPane.showMessageDialog(null, "La clave del Cliente " + estado.getCliente().getNombre()+ " es: " + index);
-            getState()[index] = estado;
+            getState()[index] = state;
         } else{
 //            JOptionPane.showMessageDialog(null, "¡ERROR!\nEl estado ya está registrado");
         }
@@ -75,7 +75,7 @@ public class HashTable {
     public int isInHashIndex(Status est){
         for (int i = 0; i < this.getState().length; i++) {
             if (getState()[i] != null){
-                if (getState()[i].compareEstado(est)){
+                if (getState()[i].compareState(est)){
                     return i;
                 }
             }
@@ -87,7 +87,7 @@ public class HashTable {
     public int isInHashIndexN(Client client){
         for (int i = 0; i < this.getState().length; i++) {
             if (getState()[i] != null){
-                if (getState()[i].getClient.getNombre().equalsIgnoreCase(client.getName()) && getState()[i].getCliente().getSegundo_nombre().equalsIgnoreCase(client.getLastname()){
+                if (getState()[i].getClient.getNombre().equalsIgnoreCase(client.getName()) && getState()[i].getClient().getSegundo_nombre().equalsIgnoreCase(client.getLastname())){
                     return i;
                 }
             }
