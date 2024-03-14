@@ -84,10 +84,10 @@ public class HashTable {
         return -1;
     }
     
-    public int isInHashIndexN(Client cliente){
+    public int isInHashIndexN(Client client){
         for (int i = 0; i < this.getState().length; i++) {
             if (getState()[i] != null){
-                if (getState()[i].getCliente.getNombre().equalsIgnoreCase(cliente.getNombre()) && getState()[i].getCliente().getSegundo_nombre().equalsIgnoreCase(cliente.getSegundo_nombre())){
+                if (getState()[i].getClient.getNombre().equalsIgnoreCase(client.getName()) && getState()[i].getCliente().getSegundo_nombre().equalsIgnoreCase(client.getLastname()){
                     return i;
                 }
             }
