@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Interfaces;
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author Christian
@@ -21,7 +21,8 @@ public class CheckIn extends javax.swing.JFrame {
             this.v1 = v1;
             v1.setVisible(false);
             this.setLocationRelativeTo(null);
-            this.setResizable(false);   
+            this.setResizable(false);
+            bottomSave.setEnabled(false);
     }
 
     /**
@@ -48,6 +49,7 @@ public class CheckIn extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        bottomSave = new javax.swing.JButton();
         comboSex = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,7 +73,7 @@ public class CheckIn extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 30));
 
         number.setBackground(new java.awt.Color(255, 255, 255));
-        number.setForeground(new java.awt.Color(255, 255, 255));
+        number.setForeground(new java.awt.Color(0, 0, 0));
         number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 numberActionPerformed(evt);
@@ -80,10 +82,10 @@ public class CheckIn extends javax.swing.JFrame {
         jPanel1.add(number, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 230, -1));
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/background.jpg"))); // NOI18N
-        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 470, 370));
+        jPanel1.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 470, 370));
 
         name.setBackground(new java.awt.Color(255, 255, 255));
-        name.setForeground(new java.awt.Color(255, 255, 255));
+        name.setForeground(new java.awt.Color(0, 0, 0));
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameActionPerformed(evt);
@@ -92,7 +94,7 @@ public class CheckIn extends javax.swing.JFrame {
         jPanel1.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 230, -1));
 
         id.setBackground(new java.awt.Color(255, 255, 255));
-        id.setForeground(new java.awt.Color(255, 255, 255));
+        id.setForeground(new java.awt.Color(0, 0, 0));
         id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 idActionPerformed(evt);
@@ -113,7 +115,7 @@ public class CheckIn extends javax.swing.JFrame {
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 300, -1));
 
         lastName.setBackground(new java.awt.Color(255, 255, 255));
-        lastName.setForeground(new java.awt.Color(255, 255, 255));
+        lastName.setForeground(new java.awt.Color(0, 0, 0));
         lastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lastNameActionPerformed(evt);
@@ -125,7 +127,7 @@ public class CheckIn extends javax.swing.JFrame {
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 230, -1));
 
         email.setBackground(new java.awt.Color(255, 255, 255));
-        email.setForeground(new java.awt.Color(255, 255, 255));
+        email.setForeground(new java.awt.Color(0, 0, 0));
         email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailActionPerformed(evt);
@@ -135,6 +137,14 @@ public class CheckIn extends javax.swing.JFrame {
 
         jLabel7.setText("Introduzca el correo electrónico  del huésped:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 300, -1));
+
+        bottomSave.setText("Guardar");
+        bottomSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bottomSaveActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bottomSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, -1, -1));
 
         comboSex.setBackground(new java.awt.Color(255, 255, 255));
         comboSex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M", "F" }));
@@ -181,6 +191,14 @@ public class CheckIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboSexActionPerformed
 
+    private void bottomSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bottomSaveActionPerformed
+        JOptionPane.showMessageDialog(null, "Huésped guardado exitosamente!");
+        this.setVisible(false);
+        Welcome b = new Welcome();
+        Menu window1 = new Menu(b);
+        window1.setVisible(true);
+    }//GEN-LAST:event_bottomSaveActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -219,6 +237,7 @@ public class CheckIn extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton back;
     private javax.swing.JLabel background;
+    private javax.swing.JButton bottomSave;
     private javax.swing.JComboBox<String> comboSex;
     private javax.swing.JTextField email;
     private javax.swing.JTextField id;
