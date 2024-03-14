@@ -63,7 +63,7 @@ public class HashTable {
         boolean aux = false;
         for (int i = 0; i < this.getState().length; i++) {
             if (getState()[i] != null){
-                if (getState()[i].compareEstado(est)){
+                if (getState()[i].compareState(est)){
                     aux = true;
                 }
             }
@@ -87,7 +87,7 @@ public class HashTable {
     public int isInHashIndexN(Client client){
         for (int i = 0; i < this.getState().length; i++) {
             if (getState()[i] != null){
-                if (getState()[i].getClient.getNombre().equalsIgnoreCase(client.getName()) && getState()[i].getClient().getSegundo_nombre().equalsIgnoreCase(client.getLastname())){
+                if (getState()[i].getClient().getName().equalsIgnoreCase(client.getName()) && getState()[i].getClient().getLastname().equalsIgnoreCase(client.getLastname())){
                     return i;
                 }
             }
