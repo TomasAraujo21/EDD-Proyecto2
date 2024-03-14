@@ -13,7 +13,7 @@ public class Status {
     private Client client;
     private String arrive;
 
-    public Status(int num_hab, Client client, String llegada) {
+    public Status(int num_hab, Client client, String arrive) {
         this.num_hab = num_hab;
         this.client = client;
         this.arrive = arrive;
@@ -50,7 +50,7 @@ public class Status {
     
     
     
-    public boolean compareEstado(Status state){
+    public boolean compareState(Status state){
         return (state.getClient().getPhoneNumber() == null ? this.client.getPhoneNumber() == null : state.getClient().getPhoneNumber().equals(this.client.getPhoneNumber())) && state.getClient().getName().equalsIgnoreCase(this.client.getName());
-    }
+    }
 }

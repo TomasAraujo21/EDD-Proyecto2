@@ -4,6 +4,11 @@
  */
 package Interfaces;
 
+import EDD.BST;
+import EDD.HashTable;
+import EDD.List;
+import Functions.FileCSV;
+
 /**
  *
  * @author Christian
@@ -13,6 +18,9 @@ public class Welcome extends javax.swing.JFrame {
     /**
      * Creates new form Welcome
      */
+    public static HashTable state = new HashTable();
+    public static BST reservation = new BST();
+    public static List list_rooms = new List();       
     public Welcome() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -69,6 +77,11 @@ public class Welcome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void nextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextActionPerformed
+        FileCSV file = new FileCSV();
+        file.Read_state(state);
+        file.Read_bookings(reservation);
+        String chain = "";
+        System.out.println(reservation.preOrder2(reservation.getRoot(), chain));
         this.setVisible(false);
         Welcome b = new Welcome();
         Menu window1 = new Menu(b);
