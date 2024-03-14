@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package EDD;
-
+import Classes.*;
 /**
  *
  * @author Gabriel Flores
@@ -31,41 +31,41 @@ public class BST {
         this.setRoot(null);
     }
     
-    public void insertNodo(NodeBST root,int element) {
+    public void insertNodo(NodeBST root,Reservation reservation) {
         NodeBST node = new NodeBST();
-        node.setInfo(element);
+        node.setReservation(reservation);
         if (isEmpty()) {
             setRoot(node);
         } else {
-            if (element <= (int) root.getInfo()) {
+            if (reservation.getClient().getId() <=  root.getReservation().getClient().getId()) {
                 if(root.getRight() == null) {
                     root.setRight(node);
                     node.setFather(node);
                 } else {
-                    insertNodo(root.getLeft(),element);
+                    insertNodo(root.getLeft(),reservation);
                 }
             } else {
                 if(root.getRight() == null) {
                     root.setRight(node);
                     node.setFather(root);
                 } else {
-                    insertNodo(root.getRight(),element);
+                    insertNodo(root.getRight(),reservation);
                 }
             }
         }
     }
     
-    public NodeBST searchNode(int num, NodeBST root){
+    public NodeBST searchNode(int id, NodeBST root){
         if(isEmpty()){
             return null;
         }else{
-            if((int)root.getInfo() == num){
+            if(root.getReservation().getClient().getId() == id){
                 return root;
             }else{
-                if(num < (int)root.getInfo()){
-                    return searchNode(num, root.getLeft());
+                if(id < root.getReservation().getClient().getId()){
+                    return searchNode(id, root.getLeft());
                 }else{
-                    return searchNode(num, root.getLeft());
+                    return searchNode(id, root.getLeft());
                 }
             }
         }
@@ -73,7 +73,7 @@ public class BST {
     
     public void preOrder(NodeBST root) {
         if (root != null) {
-            System.out.println("{ "+root.getInfo()+" }");
+            System.out.println("{ "+root.getReservation().toString()+" }");
             preOrder(root.getLeft());
             preOrder(root.getRight());
         }
@@ -81,7 +81,7 @@ public class BST {
     
     public String preOrder2 (NodeBST root, String chain){
         if(root != null){
-            chain = chain + root.getInfo() + ",";
+            chain = chain + root.getReservation().toString() + ",";
             chain = preOrder2(root.getLeft(), chain);
             chain = preOrder2(root.getRight(), chain);
         }
@@ -90,7 +90,7 @@ public class BST {
     }
     
     public void List(NodeBST root, List list) {
-        list.addEnd(root.getInfo());
+        list.addEnd(root.getReservation());
         
         if(root.getLeft()!= null){
             List(root.getLeft(), list);
@@ -103,7 +103,7 @@ public class BST {
     public void inOrder(NodeBST root) {
         if (root != null) {
             preOrder(root.getLeft());
-            System.out.println("{ "+root.getInfo()+" }");
+            System.out.println("{ "+root.getReservation().toString()+" }");
             preOrder(root.getRight());
         }
     }
@@ -112,7 +112,7 @@ public class BST {
         if (root != null) {
             preOrder(root.getLeft());
             preOrder(root.getRight());
-            System.out.println("{ "+root.getInfo()+" }");
+            System.out.println("{ "+root.getReservation().toString()+" }");
         }
     }
 

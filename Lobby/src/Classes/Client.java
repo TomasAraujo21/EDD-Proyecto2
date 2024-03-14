@@ -24,6 +24,17 @@ public class Client {
         this.id = id;
         this.phoneNumber = phoneNumber;
     }
+
+    public Client(String name, String lastname, String email, String sex, String phoneNumber) {
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.sex = sex;
+        this.id = 0;
+        this.phoneNumber = phoneNumber;
+    }
+    
+    
     
     public Client(String name, String lastname) {
         this.name = name;

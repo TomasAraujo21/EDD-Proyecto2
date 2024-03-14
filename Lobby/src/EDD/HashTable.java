@@ -18,11 +18,11 @@ public class HashTable {
         this.size = 300;
         this.state = new Status[size];
     }
-    
+
     public int getSize() {
         return size;
     }
-    
+
     public void setSize(int size) {
         this.size = size;
     }
@@ -31,9 +31,6 @@ public class HashTable {
         return state;
     }
 
-    /**
-     * @param estado the estado to set
-     */
     public void setState(Status[] state) {
         this.state = state;
     }
@@ -46,7 +43,7 @@ public class HashTable {
     }
     
     public void insertState(Status state){
-        if (!isInHash(state)) {
+         if (!isInHash(state)) {
             int index = state.getNum_hab();
             while (getState()[index] != null) {
                 index++;
@@ -56,26 +53,26 @@ public class HashTable {
         } else{
 //            JOptionPane.showMessageDialog(null, "¡ERROR!\nEl estado ya está registrado");
         }
+
     }
     
-    //Verifica si un documento ya existe en la HashTable/
-    public boolean isInHash(Status est){
+    public boolean isInHash(Status state){
         boolean aux = false;
         for (int i = 0; i < this.getState().length; i++) {
             if (getState()[i] != null){
-                if (getState()[i].compareState(est)){
+                if (getState()[i].compareState(state)){
                     aux = true;
                 }
             }
         }
         return aux;
-    }
 
-    //Verifica si un documento ya existe en la HashTable/
-    public int isInHashIndex(Status est){
+    }
+    
+    public int isInHashIndex(Status state){
         for (int i = 0; i < this.getState().length; i++) {
             if (getState()[i] != null){
-                if (getState()[i].compareState(est)){
+                if (getState()[i].compareState(state)){
                     return i;
                 }
             }
@@ -83,7 +80,7 @@ public class HashTable {
         
         return -1;
     }
-    
+ 
     public int isInHashIndexN(Client client){
         for (int i = 0; i < this.getState().length; i++) {
             if (getState()[i] != null){
@@ -95,12 +92,12 @@ public class HashTable {
         
         return -1;
     }
-    public void Availables(List hab_disp){
+    
+    public void Availables(List room_availables){
         for (int i = 1; i < this.getState().length; i++) {
             if (getState()[i] == null){
-                hab_disp.addEnd(i);
+                room_availables.addEnd(i);
             }
-
+        }
     }
-}
 }

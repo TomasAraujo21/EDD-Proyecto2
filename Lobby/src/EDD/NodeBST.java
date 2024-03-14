@@ -3,41 +3,38 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package EDD;
-
+import Classes.*;
 /**
  *
  * @author Gabriel Flores
  */
 public class NodeBST {
-    private Object info;
+    private Reservation reservation;
     private NodeBST left;
     private NodeBST right;
     private NodeBST father;
 
-    public NodeBST(Object info, NodeBST left, NodeBST right, NodeBST father) {
-        this.info = info;
+    public NodeBST(Reservation reservation , NodeBST left, NodeBST right, NodeBST father) {
+        this.reservation = reservation;
         this.left = left;
         this.right = right;
         this.father = father;
     }
 
     public NodeBST() {
-        this.info = null;
+        this.reservation = null;
         this.left = null;
         this.right = null;
         this.father = null;
     }
-    
-    
 
-    public Object getInfo() {
-        return info;
+    public Reservation getReservation() {
+        return reservation;
     }
 
-    public void setInfo(Object info) {
-        this.info = info;
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
     }
-
     public NodeBST getLeft() {
         return left;
     }
