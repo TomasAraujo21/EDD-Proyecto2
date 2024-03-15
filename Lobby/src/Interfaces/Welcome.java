@@ -4,6 +4,7 @@
  */
 package Interfaces;
 
+import Classes.Client;
 import EDD.BST;
 import EDD.HashTable;
 import EDD.List;
@@ -81,6 +82,10 @@ public class Welcome extends javax.swing.JFrame {
         file.Read_state(state);
         file.Read_bookings(reservation);
         String chain = "";
+        
+        //Client client = new Client("Arielle", "Bragger");
+        //System.out.println(state.isInHashIndexN(client));
+        
         System.out.println(reservation.preOrder2(reservation.getRoot(), chain));
         this.setVisible(false);
         Welcome b = new Welcome();

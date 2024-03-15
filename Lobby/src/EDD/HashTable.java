@@ -44,7 +44,7 @@ public class HashTable {
     
     public void insertState(Status state){
          if (!isInHash(state)) {
-            int index = state.getNum_hab();
+            int index = state.getNum_hab()-1;
             while (getState()[index] != null) {
                 index++;
             }
@@ -73,7 +73,7 @@ public class HashTable {
         for (int i = 0; i < this.getState().length; i++) {
             if (getState()[i] != null){
                 if (getState()[i].compareState(state)){
-                    return i;
+                    return i+1;
                 }
             }
         }
@@ -85,7 +85,7 @@ public class HashTable {
         for (int i = 0; i < this.getState().length; i++) {
             if (getState()[i] != null){
                 if (getState()[i].getClient().getName().equalsIgnoreCase(client.getName()) && getState()[i].getClient().getLastname().equalsIgnoreCase(client.getLastname())){
-                    return i;
+                    return i+1;
                 }
             }
         }
