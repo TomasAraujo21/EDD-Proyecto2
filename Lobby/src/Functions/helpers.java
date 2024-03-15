@@ -7,6 +7,7 @@ package Functions;
 /**
  *
  * @author Gabriel Flores
+ * 
  */
 public class helpers {
     public boolean validateLyrics(String letter){
