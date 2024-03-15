@@ -23,7 +23,7 @@ public class FileCSV {
     public void Read_bookings(BST tree_reserv){ 
         String line;
         String expresion_txt = "";
-        String path = "test\\bookings.csv";
+        String path = "test//bookings.csv";
         File file = new File(path);
         try{
             if(!file.exists()){
@@ -40,7 +40,7 @@ public class FileCSV {
                     String[] expresion_split = expresion_txt.split("\n");
                     for(int i =0;i < expresion_split.length;i++){
                         String[] info = expresion_split[i].split(",");
-                        if(help.ValidateID(info[0]) != -1 && help.Validate_RoomType(info[5]) != null && help.ValidateEmail(info[3]) != null && help.Validatetelf(info[6]) != null){
+                        //if(help.ValidateID(info[0]) != -1 && help.Validate_RoomType(info[5]) != null && help.ValidateEmail(info[3]) != null && help.Validatetelf(info[6]) != null){
                             int id = help.ValidateID(info[0]);
                             String name = info[1];
                             String last_name = info[2];
@@ -54,13 +54,15 @@ public class FileCSV {
                             String departure_date = info[7];
                             String arrival_date = info[8];
                             
+                            
                             Reservation booking = new Reservation(client, roomType, departure_date, arrival_date);
+                            System.out.println(booking.toString());
                             
                             tree_reserv.insertNodo(tree_reserv.getRoot(), booking);
-                        }else{
-                            JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
-                            break;
-                        }   
+                        //}else{
+                            //JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
+                            //break;
+                        //}   
                     }
                 }
                 br.close();
@@ -73,7 +75,7 @@ public class FileCSV {
     public void Read_rooms(List list_rooms){
         String line;
         String expresion_txt = "";
-        String path = "test\\rooms.csv";
+        String path = "test//rooms.csv";
         File file = new File(path);
         try{
             if(!file.exists()){
@@ -129,13 +131,15 @@ public class FileCSV {
                 }
                 if (!"".equals(expresion_txt)){
                     String[] expresion_split = expresion_txt.split("\n");
-                    for(int i =0;i < expresion_split.length-1;i++){
+                    for(int i =0;i < expresion_split.length;i++){
                         String[] info = expresion_split[i].split(",");
+                        
                         if(!info[0].equalsIgnoreCase("")){
+                            
                             if(help.ValidateNumbers(info[0]) != -1 &&  help.ValidateEmail(info[3]) != null && help.Validatetelf(info[5]) != null){
                                 int num_room = help.ValidateNumbers(info[0]);
                                 String name = info[1];
-                                System.out.println(name);
+                              
                                 String last_name = info[2];
                                 String email = help.ValidateEmail(info[3]);
                                 String sex = info[4];
@@ -148,10 +152,10 @@ public class FileCSV {
                                 
                                 table.insertState(state);  
                             }else{
-                                JOptionPane.showMessageDialog(null, "Hay un error en algun dato");
+                                //JOptionPane.showMessageDialog(null, "Hay un error en algun dato");
                                 break;
                             }
-                        }    
+                    }    
                     }
                 }
                 br.close();
