@@ -57,7 +57,7 @@ public class FileCSV {
                             
                             Reservation booking = new Reservation(client, roomType, departure_date, arrival_date);
                             System.out.println(booking.toString());
-                            if()
+                            
                             tree_reserv.insertNodo(tree_reserv.getRoot(), booking);
                         //}else{
                             //JOptionPane.showMessageDialog(null, "Existe un error en alguno de los datos");
