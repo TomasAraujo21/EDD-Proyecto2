@@ -80,7 +80,7 @@ public class HashTable {
         
         return -1;
     }
- 
+    //Busca el cliente por nombre.
     public int isInHashIndexN(Client client){
         for (int i = 0; i < this.getState().length; i++) {
             if (getState()[i] != null){
