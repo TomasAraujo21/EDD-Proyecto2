@@ -23,7 +23,7 @@ public class FileCSV {
     public void Read_bookings(BST tree_reserv){ 
         String line;
         String expresion_txt = "";
-        String path = "test//bookings.csv";
+        String path = "test\\bookings.csv";
         File file = new File(path);
         try{
             if(!file.exists()){
@@ -75,7 +75,7 @@ public class FileCSV {
     public void Read_rooms(List list_rooms){
         String line;
         String expresion_txt = "";
-        String path = "test//rooms.csv";
+        String path = "test\\rooms.csv";
         File file = new File(path);
         try{
             if(!file.exists()){
