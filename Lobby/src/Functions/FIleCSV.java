@@ -114,7 +114,7 @@ public class FileCSV {
     public void Read_state(HashTable table){
         String line;
         String expresion_txt = "";
-        String path = "test\\state.csv";
+        String path = "test\\state2.csv";
         File file = new File(path);
         try{
             if(!file.exists()){
@@ -134,7 +134,6 @@ public class FileCSV {
                         if(!info[0].equalsIgnoreCase("")){
                             if(help.ValidateNumbers(info[0]) != -1 &&  help.ValidateEmail(info[3]) != null && help.Validatetelf(info[5]) != null){
                                 int num_room = help.ValidateNumbers(info[0]);
-                                
                                 String name = info[1];
                                 System.out.println(name);
                                 String last_name = info[2];
